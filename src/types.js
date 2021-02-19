@@ -5,10 +5,11 @@ import type { Node } from 'react';
 export type AppearanceTypes = 'error' | 'info' | 'success' | 'warning';
 export type Id = string;
 export type Callback = Id => void;
-export type Options = {
+export type Options<P> = {
   appearance: AppearanceTypes,
   autoDismiss?: boolean,
   onDismiss?: Callback,
+  customOptions?: P,
 };
 
 export type AddFn = (content: Node, options?: Options) => Id;
